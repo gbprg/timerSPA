@@ -81,19 +81,20 @@ export function CyclesContextProvider({
     )
     setActiveCycleId(null)
   }
-
-  <CyclesContext.Provider
-   value={{ 
-      cycles,
-      activeCycle, 
-      activeCycleId, 
-      markCurrentCycleAsFinished, 
-      amountSecondsPassed, 
-      setSecondsPassed,
-      createNewCycle,
-      interruptCurrentCycle
-    }}
-  >
-    {children}
-  </CyclesContext.Provider>
+  return (
+    <CyclesContext.Provider
+      value={{ 
+        cycles,
+        activeCycle, 
+        activeCycleId, 
+        markCurrentCycleAsFinished, 
+        amountSecondsPassed, 
+        setSecondsPassed,
+        createNewCycle,
+        interruptCurrentCycle
+      }}
+    >
+     {children}
+    </CyclesContext.Provider>
+  )
 }
